@@ -39,8 +39,8 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 lg:px-10">
-        <Link href="#top" className="flex items-center gap-2 font-display text-2xl tracking-tight transition-opacity hover:opacity-80">
-          w.
+        <Link href="#top" className="flex items-center gap-2 font-display text-xl tracking-tight transition-opacity hover:opacity-80 lg:text-2xl">
+          Best Noornova
         </Link>
 
         <nav className="hidden items-center gap-6 rounded-full border border-line bg-white/75 px-5 py-2 font-mono text-[10px] uppercase tracking-wider text-charcoal/75 lg:flex">

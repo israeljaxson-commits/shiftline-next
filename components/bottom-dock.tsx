@@ -56,13 +56,13 @@ export function BottomDock() {
       transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 0.8, 0.3, 1] }}
       className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,700px)] -translate-x-1/2"
     >
-      <div className="flex items-center gap-2 rounded-2xl border border-charcoal bg-charcoal p-2 text-paper shadow-[0_14px_36px_rgba(0,0,0,0.34)]">
+      <div className="flex items-center gap-2 rounded-2xl border p-2 text-paper shadow-[0_14px_36px_rgba(0,0,0,0.34)]" style={{ backgroundColor: "#000", borderColor: "#000" }}>
         <Link
           href="#top"
-          className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper text-2xl font-bold text-charcoal transition-transform hover:-translate-y-0.5"
+          className="flex h-12 min-w-[148px] items-center justify-center rounded-xl bg-paper px-4 text-center font-display text-lg font-semibold tracking-tight text-charcoal transition-transform hover:-translate-y-0.5"
           aria-label="Back to top"
         >
-          w.
+          Best Noornova
         </Link>
         <div className="grid flex-1 grid-cols-5 gap-2">
           {items.map((item) => {
@@ -73,8 +73,8 @@ export function BottomDock() {
               <motion.div
                 key={item.href}
                 className={cn(
-                  "relative overflow-hidden rounded-xl border px-2 py-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] transition-colors",
-                  isActive ? "border-white/65 text-white" : "border-white/25 text-white/82 hover:border-white/45 hover:text-white",
+                  "relative overflow-hidden rounded-xl border bg-black px-2 py-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] transition-colors",
+                  isActive ? "border-white text-white" : "border-[#2b2b2b] text-white hover:border-[#595959] hover:text-white",
                 )}
                 whileHover={{ y: -2, scale: 1.02 }}
                 animate={{
@@ -99,7 +99,7 @@ export function BottomDock() {
                   <motion.span
                     layoutId="dock-active-pill"
                     transition={{ type: "spring", stiffness: 500, damping: 38 }}
-                    className="absolute inset-0 rounded-[10px] bg-white/15"
+                    className="absolute inset-0 rounded-[10px] bg-[#171717]"
                     aria-hidden="true"
                   />
                 ) : null}
@@ -109,9 +109,9 @@ export function BottomDock() {
           })}
         </div>
       </div>
-      <div className="pointer-events-none mt-2 h-1.5 overflow-hidden rounded-full bg-charcoal/25">
+      <div className="pointer-events-none mt-2 h-1.5 overflow-hidden rounded-full bg-black">
         <motion.div
-          className="h-full origin-left rounded-full bg-charcoal"
+          className="h-full origin-left rounded-full bg-white"
           style={{ scaleX: progress }}
         />
       </div>
