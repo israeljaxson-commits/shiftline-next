@@ -1,0 +1,41 @@
+:root {
+  --color-charcoal: #12140f;
+  --color-paper: #faf9f4;
+  --color-emerald-deep: #0e4a34;
+  --color-emerald: #1f9d63;
+  --color-emerald-bright: #2ecc81;
+  --color-beige: #e7dfcd;
+  --color-steel: #8b8d85;
+  --color-line: rgba(18, 20, 15, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-emerald-bright);
+  color: var(--color-charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
