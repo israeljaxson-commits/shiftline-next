@@ -14,27 +14,27 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shiftline.work"),
+  metadataBase: new URL("https://bestnoornova.com"),
   title: {
-    default: "Shiftline - Workforce, on the move",
-    template: "%s | Shiftline",
+    default: "Best Noornova - Workforce, on the move",
+    template: "%s | Best Noornova",
   },
-  description: "Shiftline connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
-  applicationName: "Shiftline",
+  description: "Best Noornova connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
+  applicationName: "Best Noornova",
   keywords: ["workforce", "recruitment", "employee leasing", "delivery", "hospitality", "construction"],
-  authors: [{ name: "Shiftline" }],
-  creator: "Shiftline",
+  authors: [{ name: "Best Noornova" }],
+  creator: "Best Noornova",
   openGraph: {
-    title: "Shiftline - Workforce, on the move",
-    description: "Shiftline connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
-    url: "https://shiftline.work",
-    siteName: "Shiftline",
+    title: "Best Noornova - Workforce, on the move",
+    description: "Best Noornova connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
+    url: "https://bestnoornova.com",
+    siteName: "Best Noornova",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shiftline - Workforce, on the move",
-    description: "Shiftline connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
+    title: "Best Noornova - Workforce, on the move",
+    description: "Best Noornova connects delivery, hospitality and construction workers with employers who need them - fast, verified, reliable.",
   },
 };
 

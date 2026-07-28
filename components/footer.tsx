@@ -9,9 +9,12 @@ export function Footer() {
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
           <div>
-            <p className="mb-3 font-display text-5xl leading-none tracking-tight text-charcoal">w.</p>
+            <p className="mb-3 font-display text-4xl leading-none tracking-tight text-charcoal">Best Noornova</p>
             <p className="max-w-sm text-sm leading-relaxed text-charcoal/70">
-              Shiftline builds dependable teams for courier routes, fulfillment centers, and active construction sites.
+              Best Noornova builds dependable teams for courier routes, fulfillment centers, and active construction sites.
+            </p>
+            <p className="mt-3 max-w-sm font-mono text-[10px] uppercase tracking-[0.16em] text-charcoal/55">
+              Managing Director: Haji Chandrakumar Ajeesh Krishnan
             </p>
           </div>
 
@@ -34,7 +37,7 @@ export function Footer() {
         <div className="my-12 h-px bg-[radial-gradient(circle,var(--color-charcoal)_0.8px,transparent_0.8px)] bg-[length:8px_1px] bg-repeat-x" />
 
         <div className="flex flex-col gap-4 text-xs text-charcoal/55 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Shiftline Workforce Solutions</p>
+          <p>© 2026 Best Noornova Workforce Solutions</p>
           <div className="flex items-center gap-6">
             <Link href="#" className="transition-colors hover:text-charcoal">
               Cookies

@@ -14,7 +14,7 @@ export function WhyShiftline() {
   return (
     <section className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
       <Reveal>
-        <SectionHeading eyebrow="05 — Why Shiftline" title="Built for the shift that can't go unfilled." className="mb-16 max-w-xl" />
+        <SectionHeading eyebrow="05 — Why Best Noornova" title="Built for the shift that can't go unfilled." className="mb-16 max-w-xl" />
       </Reveal>
 
       <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">

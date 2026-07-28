@@ -29,7 +29,7 @@ export function Hero() {
           transition={{ duration: 0.55, ease: [0.16, 0.8, 0.3, 1] }}
           className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-charcoal/55"
         >
-          Shiftline • Workforce, on the move
+          Best Noornova • Workforce, on the move
         </motion.p>
 
         <motion.h1

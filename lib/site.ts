@@ -83,7 +83,7 @@ export const timeline = {
     },
     {
       title: "Start your shift",
-      text: "Onboarding support and a direct line to your Shiftline contact.",
+      text: "Onboarding support and a direct line to your Best Noornova contact.",
     },
   ],
   employers: [
@@ -123,14 +123,14 @@ export const stats = [
 
 export const testimonials = [
   {
-    quote: "We filled 30 courier shifts in under a week during our busiest season. Shiftline just handled it.",
+    quote: "We filled 30 courier shifts in under a week during our busiest season. Best Noornova just handled it.",
     role: "Operations Lead, Delivery Network",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
     alt: "Courier team lead in a real logistics environment",
   },
   {
     quote: "I went from application to my first warehouse shift in four days. Nobody else moved that fast.",
-    role: "Warehouse Operative, placed via Shiftline",
+    role: "Warehouse Operative, placed via Best Noornova",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
     alt: "Worker in a real warehouse setting",
   },

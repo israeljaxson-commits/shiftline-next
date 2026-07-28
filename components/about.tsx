@@ -8,13 +8,13 @@ export function About() {
     <section id="about" className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40 xl:py-48">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
-          <SectionHeading eyebrow="01 — About Shiftline" title="Every shift is a promise someone shows up for." />
+          <SectionHeading eyebrow="01 — About Best Noornova" title="Every shift is a promise someone shows up for." />
         </Reveal>
 
         <div className="lg:col-span-7 lg:pt-16">
           <Reveal>
             <p className="max-w-2xl text-balance text-lg leading-relaxed text-charcoal/80 lg:text-xl">
-              Shiftline was built for the kinds of jobs that keep cities running: fast moving delivery work, warehouse coverage, and active site crews. We match real people to real shifts with speed, accountability, and zero guesswork.
+              Best Noornova was built for the kinds of jobs that keep cities running: fast moving delivery work, warehouse coverage, and active site crews. We match real people to real shifts with speed, accountability, and zero guesswork.
             </p>
           </Reveal>
 
@@ -32,7 +32,7 @@ export function About() {
       <Reveal className="mt-20">
         <div className="relative h-[60vh] overflow-hidden rounded-2xl lg:h-[70vh]">
           <Image
-            src="https://images.unsplash.com/photo-1580281657527-1f5c0f2e53a9?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&q=80"
             alt="Real courier and warehouse workers operating in an active urban environment"
             fill
             priority={false}
