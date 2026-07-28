@@ -39,15 +39,15 @@ export function About() {
             className="object-cover"
             sizes="(min-width: 1024px) 1200px, 100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/15 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-charcoal/18 to-charcoal/5" />
           <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-            <div className="flex items-center gap-4 text-white">
+            <div className="flex items-center gap-4 rounded-xl bg-white/88 p-4 text-charcoal shadow-[0_10px_24px_rgba(0,0,0,0.2)] backdrop-blur-sm">
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
                 <path d="M3 12h4l3 8 4-16 3 8h4" />
               </svg>
               <div>
-                <p className="font-display text-xl text-white">People on the move, every day</p>
-                <p className="mt-1 font-mono text-[10.5px] uppercase tracking-[0.08em] text-white/60">
+                <p className="font-display text-xl font-semibold text-charcoal">People on the move, every day</p>
+                <p className="mt-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.08em] text-charcoal/70">
                   Documentary-style crews, real shifts, real work
                 </p>
               </div>

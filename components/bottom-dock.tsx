@@ -114,8 +114,8 @@ export function BottomDock() {
       initial={{ y: 36, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 0.8, 0.3, 1] }}
-      style={{ y: liftY }}
-      className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,700px)] -translate-x-1/2"
+      style={{ y: liftY, x: "-50%" }}
+      className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,700px)]"
     >
       <motion.div
         animate={{ scale: isAtTop ? 0.97 : 1, opacity: isAtTop ? 0.92 : 1 }}

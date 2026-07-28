@@ -25,8 +25,8 @@ export function Industries() {
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/25 to-transparent" />
-                  <p className="absolute left-5 top-5 rounded-full border border-white/40 bg-black/30 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-white/85">
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/78 via-charcoal/35 to-charcoal/10" />
+                  <p className="absolute left-5 top-5 rounded-full border border-charcoal/20 bg-white/92 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-charcoal shadow-[0_2px_8px_rgba(0,0,0,0.18)] backdrop-blur-sm">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                 </div>

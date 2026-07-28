@@ -59,13 +59,13 @@ export function Hero() {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/78 via-charcoal/30 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/58 via-charcoal/20 to-charcoal/5" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-5 rounded-xl bg-white/86 p-3 shadow-[0_10px_24px_rgba(0,0,0,0.2)] backdrop-blur-sm">
                   <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">Workforce</p>
-                    <p className="mt-2 max-w-[18ch] font-display text-3xl leading-[1.02] text-white">{item.title}</p>
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-charcoal/70">Workforce</p>
+                    <p className="mt-2 max-w-[18ch] font-display text-3xl font-semibold leading-[1.02] text-charcoal">{item.title}</p>
                   </div>
-                  <span className="rounded-full border border-white/35 bg-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-white/90">
+                  <span className="rounded-full border border-charcoal/25 bg-white px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-charcoal shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
                     {item.partner}
                   </span>
                 </div>
