@@ -36,8 +36,8 @@ export function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1800&q=80"
-            alt="Couriers and warehouse workers in real urban and industrial settings"
+            src="https://images.pexels.com/photos/9502199/pexels-photo-9502199.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1800&q=80"
+            alt="A delivery rider on a bicycle in an urban street"
             fill
             priority
             className="object-cover"
