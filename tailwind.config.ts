@@ -15,8 +15,8 @@ const config: Config = {
         line: "var(--color-line)",
       },
       fontFamily: {
-        sans: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        display: ["ui-serif", "Georgia", "Cambria", "Times New Roman", "serif"],
+        sans: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        display: ["var(--font-cormorant)", "Georgia", "serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
       },
       boxShadow: {

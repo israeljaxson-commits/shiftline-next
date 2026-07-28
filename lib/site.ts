@@ -27,8 +27,8 @@ export const industries = [
   {
     title: "Couriers & Last-Mile",
     description: "Reliable riders and delivery crew for app-based work, same-day routes, and fast-moving city operations.",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1400&q=80",
-    alt: "Courier riding through a city street during a delivery run",
+    image: "https://images.pexels.com/photos/7843932/pexels-photo-7843932.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&q=80",
+    alt: "Delivery person handing over a package outdoors",
   },
   {
     title: "Warehouses & Fulfillment",

@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shiftline.work"),
@@ -29,7 +41,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="bg-paper font-sans text-charcoal antialiased">
+      <body className={`${spaceGrotesk.variable} ${cormorant.variable} bg-paper font-sans text-charcoal antialiased`}>
         {children}
       </body>
     </html>

@@ -35,29 +35,28 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300",
-        scrolled ? "border-line/80 bg-paper/85 backdrop-blur-xl shadow-[0_10px_40px_rgba(12,14,10,0.06)]" : "bg-transparent",
+        scrolled ? "border-line bg-paper/90 backdrop-blur-xl" : "bg-paper/70",
       )}
     >
       <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 lg:px-10">
-        <Link href="#top" className="flex items-center gap-2 font-display text-xl tracking-tight transition-opacity hover:opacity-80">
-          <span className="h-2 w-2 rounded-full bg-emerald-bright" />
-          Shiftline
+        <Link href="#top" className="flex items-center gap-2 font-display text-2xl tracking-tight transition-opacity hover:opacity-80">
+          w.
         </Link>
 
-        <nav className="hidden items-center gap-9 font-mono text-[11px] uppercase tracking-widest text-charcoal/80 lg:flex">
+        <nav className="hidden items-center gap-6 rounded-full border border-line bg-white/75 px-5 py-2 font-mono text-[10px] uppercase tracking-wider text-charcoal/75 lg:flex">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="transition-colors duration-300 hover:text-emerald-deep">
+            <Link key={link.href} href={link.href} className="transition-colors duration-300 hover:text-charcoal">
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Button href="#apply" variant="secondary" size="md">
-            Find Work
+        <div className="hidden items-center gap-2 md:flex">
+          <Button href="#apply" variant="secondary" size="sm" className="rounded-xl border-line bg-white hover:bg-charcoal hover:text-paper">
+            Find work
           </Button>
-          <Button href="#apply" size="md">
-            Hire Workers
+          <Button href="#apply" size="sm" className="rounded-xl bg-charcoal text-paper hover:bg-black">
+            Hire crew
           </Button>
         </div>
 
@@ -92,10 +91,10 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-6 flex gap-3">
-              <Button href="#apply" variant="secondary" size="sm" className="flex-1">
+              <Button href="#apply" variant="secondary" size="sm" className="flex-1 rounded-xl">
                 Find Work
               </Button>
-              <Button href="#apply" size="sm" className="flex-1">
+              <Button href="#apply" size="sm" className="flex-1 rounded-xl">
                 Hire
               </Button>
             </div>
