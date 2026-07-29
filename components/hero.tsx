@@ -35,23 +35,23 @@ export function Hero() {
     const heading = section.querySelector<HTMLElement>(".hero-title");
     if (!heading) return;
 
-    const split = new SplitType(heading, { types: "lines,words,chars" });
+    const split = new SplitType(heading, { types: "lines,words" });
 
     gsap.set(section.querySelectorAll(".hero-kicker, .hero-meta"), { autoAlpha: 0, y: 16 });
     gsap.set(section.querySelectorAll(".hero-cards > *"), { autoAlpha: 0, y: 22, scale: 0.988 });
     gsap.set(section.querySelectorAll(".hero-depth-back, .hero-depth-front"), { autoAlpha: 0, scale: 1.08 });
     gsap.set(section.querySelectorAll(".hero-ambient-video"), { autoAlpha: 0, scale: 1.12 });
-    gsap.set(split.chars, { yPercent: 110, rotateX: -35, autoAlpha: 0, transformOrigin: "0% 100%" });
+    gsap.set(split.words, { yPercent: 112, rotateX: -18, autoAlpha: 0, transformOrigin: "0% 100%" });
 
     const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
     intro
       .to(section.querySelectorAll(".hero-depth-back"), { autoAlpha: 0.42, scale: 1, duration: 1.5 })
       .to(section.querySelectorAll(".hero-ambient-video"), { autoAlpha: 0.24, scale: 1, duration: 1.7 }, "<")
       .to(section.querySelectorAll(".hero-depth-front"), { autoAlpha: 0.36, scale: 1, duration: 1.25 }, "<0.15")
-      .to(split.chars, { autoAlpha: 1, yPercent: 0, rotateX: 0, duration: 0.95, stagger: 0.014 }, "<0.2")
+      .to(split.words, { autoAlpha: 1, yPercent: 0, rotateX: 0, duration: 0.9, stagger: 0.06 }, "<0.2")
       .to(section.querySelectorAll(".hero-kicker"), { autoAlpha: 1, y: 0, duration: 0.75 }, "<0.1")
-      .to(section.querySelectorAll(".hero-cards > *"), { autoAlpha: 1, y: 0, scale: 1, duration: 1.05, stagger: 0.12 }, "-=0.45")
-      .to(section.querySelectorAll(".hero-meta"), { autoAlpha: 1, y: 0, duration: 0.72 }, "-=0.64");
+      .to(section.querySelectorAll(".hero-cards > *"), { autoAlpha: 1, y: 0, scale: 1, duration: 1.02, stagger: 0.1 }, "-=0.42")
+      .to(section.querySelectorAll(".hero-meta"), { autoAlpha: 1, y: 0, duration: 0.68 }, "-=0.58");
 
     const backX = gsap.quickTo(section.querySelector(".hero-depth-back"), "x", { duration: 0.9, ease: "power3.out" });
     const backY = gsap.quickTo(section.querySelector(".hero-depth-back"), "y", { duration: 0.9, ease: "power3.out" });
@@ -118,12 +118,12 @@ export function Hero() {
         </Reveal>
 
         <Reveal variant="section" delay={0.04}>
-          <h1 className="hero-title max-w-5xl font-display text-[13vw] leading-[0.89] tracking-[-0.03em] text-charcoal sm:text-[11vw] lg:text-[6.5vw]">
+          <h1 className="hero-title max-w-5xl font-display text-[13vw] leading-[0.9] tracking-[-0.026em] text-charcoal sm:text-[11vw] lg:text-[6.3vw]">
             Recent shifts on the move.
           </h1>
         </Reveal>
 
-        <div className="hero-cards mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="hero-cards mt-13 grid gap-6 lg:grid-cols-2">
           {showcases.map((item, index) => (
             <Reveal
               key={item.title}
@@ -136,11 +136,12 @@ export function Hero() {
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="cursor-reactive-media object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="cursor-reactive-media docu-image object-cover object-[50%_44%] transition-transform duration-700 group-hover:scale-[1.03]"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority={index === 0}
                 />
                 <span className="cursor-reactive-glow" aria-hidden="true" />
+                <div className="docu-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/72 via-charcoal/24 to-charcoal/6" />
                 <div className="absolute left-5 top-5 rounded-full border border-white/28 bg-white/18 px-3.5 py-1 font-mono text-[9.5px] font-semibold uppercase tracking-[0.17em] text-white backdrop-blur-sm">
                   Live Route
@@ -159,7 +160,7 @@ export function Hero() {
           ))}
         </div>
 
-        <Reveal variant="text" delay={0.18} className="hero-meta mt-10 flex flex-wrap items-center gap-x-10 gap-y-3 text-[0.98rem] text-charcoal/74">
+        <Reveal variant="text" delay={0.18} className="hero-meta mt-9 flex flex-wrap items-center gap-x-10 gap-y-3 text-[0.97rem] text-charcoal/74">
           <p className="max-w-[42ch]">Recruitment and employee leasing for delivery, warehouse, and construction teams.</p>
           <Link href="#apply" className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal transition-opacity hover:opacity-70">
             View Open Roles

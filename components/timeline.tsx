@@ -23,14 +23,14 @@ function TimelineColumn({ title, items }: { title: string; items: readonly { tit
 
 export function Timeline() {
   return (
-    <section id="how" data-section="true" data-journey="timeline" className="section-shell relative overflow-hidden bg-beige py-38 lg:py-50 xl:py-58">
+    <section id="how" data-section="true" data-journey="timeline" className="section-shell relative overflow-hidden bg-beige py-36 lg:py-48 xl:py-56">
       <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-charcoal/20 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal variant="text">
-          <SectionHeading eyebrow="04 — How It Works" title="Two paths. One shared timeline." className="mb-18 max-w-2xl" />
+          <SectionHeading eyebrow="04 — How It Works" title="Two paths. One shared timeline." className="mb-16 max-w-2xl" />
         </Reveal>
 
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-14">

@@ -36,28 +36,28 @@ const orchestratorIntensity = {
   },
   stronger: {
     mobile: {
-      parallaxRange: 2.6,
-      scrubStrength: 0.58,
-      sectionLift: 16,
-      sectionDuration: 0.84,
-      timelineOffset: 13,
-      timelineDuration: 0.72,
-      timelineStagger: 0.08,
-      sectionStart: "top 91%",
-      timelineStart: "top 88%",
-      timelineScrub: 0.58,
+      parallaxRange: 2.2,
+      scrubStrength: 0.5,
+      sectionLift: 14,
+      sectionDuration: 0.92,
+      timelineOffset: 11,
+      timelineDuration: 0.78,
+      timelineStagger: 0.07,
+      sectionStart: "top 92%",
+      timelineStart: "top 89%",
+      timelineScrub: 0.52,
     },
     desktop: {
-      parallaxRange: 7.8,
-      scrubStrength: 1.35,
-      sectionLift: 28,
-      sectionDuration: 1.06,
-      timelineOffset: 26,
-      timelineDuration: 0.9,
-      timelineStagger: 0.14,
-      sectionStart: "top 85%",
-      timelineStart: "top 77%",
-      timelineScrub: 1.05,
+      parallaxRange: 6.4,
+      scrubStrength: 1.1,
+      sectionLift: 24,
+      sectionDuration: 1.16,
+      timelineOffset: 22,
+      timelineDuration: 1,
+      timelineStagger: 0.11,
+      sectionStart: "top 87%",
+      timelineStart: "top 79%",
+      timelineScrub: 0.9,
     },
   },
 } as const;
@@ -107,11 +107,11 @@ export function ScrollOrchestrator() {
           if (!media) return;
 
           const glow = wrap.querySelector<HTMLElement>(".cursor-reactive-glow");
-          const moveX = gsap.quickTo(media, "x", { duration: 0.45, ease: "power3.out" });
-          const moveY = gsap.quickTo(media, "y", { duration: 0.45, ease: "power3.out" });
-          const scale = gsap.quickTo(media, "scale", { duration: 0.5, ease: "power2.out" });
-          const rotX = gsap.quickTo(wrap, "rotationX", { duration: 0.55, ease: "power3.out" });
-          const rotY = gsap.quickTo(wrap, "rotationY", { duration: 0.55, ease: "power3.out" });
+          const moveX = gsap.quickTo(media, "x", { duration: 0.52, ease: "power3.out" });
+          const moveY = gsap.quickTo(media, "y", { duration: 0.52, ease: "power3.out" });
+          const scale = gsap.quickTo(media, "scale", { duration: 0.56, ease: "power2.out" });
+          const rotX = gsap.quickTo(wrap, "rotationX", { duration: 0.62, ease: "power3.out" });
+          const rotY = gsap.quickTo(wrap, "rotationY", { duration: 0.62, ease: "power3.out" });
           const glowX = glow ? gsap.quickTo(glow, "x", { duration: 0.35, ease: "power3.out" }) : null;
           const glowY = glow ? gsap.quickTo(glow, "y", { duration: 0.35, ease: "power3.out" }) : null;
 
@@ -122,15 +122,15 @@ export function ScrollOrchestrator() {
             const nx = px * 2 - 1;
             const ny = py * 2 - 1;
 
-            moveX(nx * 14);
-            moveY(ny * 14);
-            scale(1.055);
-            rotX(-ny * 3.2);
-            rotY(nx * 3.2);
+            moveX(nx * 10);
+            moveY(ny * 10);
+            scale(1.035);
+            rotX(-ny * 2.3);
+            rotY(nx * 2.3);
 
             if (glowX && glowY) {
-              glowX(nx * 38);
-              glowY(ny * 38);
+              glowX(nx * 28);
+              glowY(ny * 28);
             }
           };
 

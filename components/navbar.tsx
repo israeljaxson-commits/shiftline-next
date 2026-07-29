@@ -34,7 +34,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-500",
         scrolled ? "border-line/80 bg-paper/88 backdrop-blur-xl" : "bg-paper/58",
       )}
     >
@@ -43,7 +43,7 @@ export function Navbar() {
           Best Noornova
         </Link>
 
-        <nav className="hidden items-center gap-6 rounded-full border border-line/80 bg-white/82 px-5 py-2.5 font-mono text-[10px] uppercase tracking-wider text-charcoal/78 shadow-[0_12px_30px_-20px_rgba(18,20,15,0.4)] lg:flex">
+        <nav className="hidden items-center gap-7 rounded-full border border-line/80 bg-white/82 px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.13em] text-charcoal/78 shadow-[0_12px_30px_-20px_rgba(18,20,15,0.4)] lg:flex">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="transition-colors duration-300 hover:text-charcoal">
               {link.label}
