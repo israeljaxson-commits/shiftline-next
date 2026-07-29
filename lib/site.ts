@@ -27,14 +27,14 @@ export const industries = [
   {
     title: "Couriers & Last-Mile",
     description: "Reliable riders and delivery crew for app-based work, same-day routes, and fast-moving city operations.",
-    image: "https://images.pexels.com/photos/7843932/pexels-photo-7843932.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1400&q=80",
-    alt: "Delivery person handing over a package outdoors",
+    image: "https://images.pexels.com/photos/7706451/pexels-photo-7706451.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1700&q=82",
+    alt: "Courier worker navigating dense urban delivery routes",
   },
   {
     title: "Warehouses & Fulfillment",
     description: "Picker, loader, and warehouse teams ready for high-volume shifts in logistics and storage operations.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80",
-    alt: "Warehouse team working on pallets and fulfillment tasks",
+    image: "https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1700&q=82",
+    alt: "Authentic warehouse staff handling stock under natural industrial light",
   },
   {
     title: "Construction Sites",
@@ -125,20 +125,20 @@ export const testimonials = [
   {
     quote: "We filled 30 courier shifts in under a week during our busiest season. Best Noornova just handled it.",
     role: "Operations Lead, Delivery Network",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    alt: "Courier team lead in a real logistics environment",
+    image: "https://images.pexels.com/photos/7843932/pexels-photo-7843932.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&q=82",
+    alt: "Courier lead in live route operations",
   },
   {
     quote: "I went from application to my first warehouse shift in four days. Nobody else moved that fast.",
     role: "Warehouse Operative, placed via Best Noornova",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-    alt: "Worker in a real warehouse setting",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=82",
+    alt: "Warehouse operative on a live production floor",
   },
   {
     quote: "Our site never went understaffed once we moved our labor leasing over to them.",
     role: "Site Manager, Commercial Construction",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    alt: "Construction supervisor in a real jobsite environment",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=82",
+    alt: "Construction supervisor in active site conditions",
   },
 ] as const;
 

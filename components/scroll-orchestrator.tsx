@@ -79,6 +79,7 @@ export function ScrollOrchestrator() {
 
     const clipSoft = isMobile ? "inset(0 0 14% 0 round 10px)" : "inset(0 0 18% 0 round 10px)";
     const clipHard = isMobile ? "inset(0 0 100% 0 round 8px)" : "inset(0 0 100% 0 round 10px)";
+    const detach: Array<() => void> = [];
 
     const ctx = gsap.context(() => {
       gsap.utils.toArray<HTMLElement>("[data-parallax='soft']").forEach((wrap) => {
@@ -99,6 +100,60 @@ export function ScrollOrchestrator() {
           },
         );
       });
+
+      if (!isMobile) {
+        gsap.utils.toArray<HTMLElement>("[data-cursor-reactive='true']").forEach((wrap) => {
+          const media = wrap.querySelector<HTMLElement>("img");
+          if (!media) return;
+
+          const glow = wrap.querySelector<HTMLElement>(".cursor-reactive-glow");
+          const moveX = gsap.quickTo(media, "x", { duration: 0.45, ease: "power3.out" });
+          const moveY = gsap.quickTo(media, "y", { duration: 0.45, ease: "power3.out" });
+          const scale = gsap.quickTo(media, "scale", { duration: 0.5, ease: "power2.out" });
+          const rotX = gsap.quickTo(wrap, "rotationX", { duration: 0.55, ease: "power3.out" });
+          const rotY = gsap.quickTo(wrap, "rotationY", { duration: 0.55, ease: "power3.out" });
+          const glowX = glow ? gsap.quickTo(glow, "x", { duration: 0.35, ease: "power3.out" }) : null;
+          const glowY = glow ? gsap.quickTo(glow, "y", { duration: 0.35, ease: "power3.out" }) : null;
+
+          const onMove = (event: MouseEvent) => {
+            const rect = wrap.getBoundingClientRect();
+            const px = (event.clientX - rect.left) / rect.width;
+            const py = (event.clientY - rect.top) / rect.height;
+            const nx = px * 2 - 1;
+            const ny = py * 2 - 1;
+
+            moveX(nx * 10);
+            moveY(ny * 10);
+            scale(1.04);
+            rotX(-ny * 2.4);
+            rotY(nx * 2.4);
+
+            if (glowX && glowY) {
+              glowX(nx * 26);
+              glowY(ny * 26);
+            }
+          };
+
+          const onLeave = () => {
+            moveX(0);
+            moveY(0);
+            scale(1);
+            rotX(0);
+            rotY(0);
+            if (glowX && glowY) {
+              glowX(0);
+              glowY(0);
+            }
+          };
+
+          wrap.addEventListener("mousemove", onMove);
+          wrap.addEventListener("mouseleave", onLeave);
+          detach.push(() => {
+            wrap.removeEventListener("mousemove", onMove);
+            wrap.removeEventListener("mouseleave", onLeave);
+          });
+        });
+      }
 
       const hero = document.querySelector<HTMLElement>("#top");
       if (hero) {
@@ -394,7 +449,10 @@ export function ScrollOrchestrator() {
         );
       }
 
-    return () => ctx.revert();
+    return () => {
+      detach.forEach((fn) => fn());
+      ctx.revert();
+    };
   }, []);
 
   return null;

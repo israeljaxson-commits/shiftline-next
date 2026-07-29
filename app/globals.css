@@ -93,6 +93,35 @@ body {
     animation: marquee 26s linear infinite;
   }
 
+  .cursor-reactive-frame {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .cursor-reactive-media {
+    will-change: transform;
+    transform-origin: center center;
+  }
+
+  .cursor-reactive-glow {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 42%;
+    aspect-ratio: 1 / 1;
+    border-radius: 9999px;
+    opacity: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+    filter: blur(6px);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.35s ease;
+  }
+
+  .cursor-reactive-frame:hover .cursor-reactive-glow {
+    opacity: 0.55;
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0);

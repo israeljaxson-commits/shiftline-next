@@ -32,15 +32,16 @@ export function About() {
       </div>
 
       <Reveal variant="image" className="about-image mt-24">
-        <div data-parallax="soft" className="relative h-[60vh] overflow-hidden rounded-2xl lg:h-[70vh]">
+        <div data-parallax="soft" data-cursor-reactive="true" className="cursor-reactive-frame relative h-[60vh] overflow-hidden rounded-2xl lg:h-[70vh]">
           <Image
-            src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&q=80"
-            alt="Real courier and warehouse workers operating in an active urban environment"
+            src="https://images.pexels.com/photos/7706451/pexels-photo-7706451.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1900&q=82"
+            alt="Editorial documentary frame of a delivery worker in motion"
             fill
             priority={false}
-            className="object-cover"
+            className="cursor-reactive-media object-cover"
             sizes="(min-width: 1024px) 1200px, 100vw"
           />
+          <span className="cursor-reactive-glow" aria-hidden="true" />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-charcoal/18 to-charcoal/5" />
           <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
             <div className="flex items-center gap-4 rounded-xl bg-white/90 p-5 text-charcoal shadow-[0_12px_30px_rgba(0,0,0,0.2)] backdrop-blur-sm">
