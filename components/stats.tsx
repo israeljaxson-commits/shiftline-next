@@ -28,7 +28,7 @@ function AnimatedStat({ target, suffix }: { target: number; suffix: string }) {
   }, [inView, target]);
 
   return (
-    <p ref={ref} className="font-display text-5xl text-white lg:text-6xl">
+    <p ref={ref} className="font-display text-5xl leading-none text-white lg:text-6xl">
       {value.toLocaleString()}
       {suffix}
     </p>
@@ -37,17 +37,19 @@ function AnimatedStat({ target, suffix }: { target: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section id="metrics" className="grain bg-emerald-deep py-28 lg:py-36">
+    <section id="metrics" data-section="true" className="grain bg-emerald-deep py-36 lg:py-48">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <Reveal>
-          <SectionHeading eyebrow="06 — In Numbers" title="Proof that scale doesn't have to feel impersonal." dark className="mb-14 max-w-2xl" />
+        <Reveal variant="text">
+          <SectionHeading eyebrow="06 — In Numbers" title="Proof that scale doesn't have to feel impersonal." dark className="mb-16 max-w-3xl" />
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
-            <Reveal key={stat.label} delay={index * 0.05}>
-              <AnimatedStat target={stat.target} suffix={stat.suffix} />
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-white/60">{stat.label}</p>
+            <Reveal key={stat.label} variant="card" delay={index * 0.05}>
+              <div className={index % 2 === 0 ? "bg-emerald-deep/72 px-6 py-8 backdrop-blur-sm lg:translate-y-0 lg:px-8 lg:py-10" : "bg-emerald-deep/62 px-6 py-8 backdrop-blur-sm lg:translate-y-8 lg:px-8 lg:py-10"}>
+                <AnimatedStat target={stat.target} suffix={stat.suffix} />
+                <p className="mt-4 font-mono text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white/72">{stat.label}</p>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -12,19 +12,21 @@ const icons = [
 
 export function WhyShiftline() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-28 lg:px-10 lg:py-40">
-      <Reveal>
-        <SectionHeading eyebrow="05 — Why Best Noornova" title="Built for the shift that can't go unfilled." className="mb-16 max-w-xl" />
+    <section id="why" data-section="true" className="bg-beige px-6 py-36 lg:px-10 lg:py-48 xl:py-56">
+      <Reveal variant="text">
+        <SectionHeading eyebrow="05 — Why Best Noornova" title="Built for companies that need certainty before sunrise." className="mb-16 max-w-3xl" />
       </Reveal>
 
       <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
         {whyShiftline.map((item, index) => (
-          <Reveal key={item} delay={index * 0.05} amount={0.22}>
-            <div className="flex min-h-[220px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-1.5">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald-deep)" strokeWidth="1.5" aria-hidden="true">
+          <Reveal key={item} variant="card" delay={index * 0.08}>
+            <div className={index % 2 === 0 ? "flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5 lg:-translate-y-4" : "flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5"}>
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-emerald-deep/22 bg-emerald-deep/[0.05]">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald-deep)" strokeWidth="1.5" aria-hidden="true">
                 {icons[index]}
-              </svg>
-              <p className="mt-6 font-display text-lg">{item}</p>
+                </svg>
+              </span>
+              <p className="mt-6 font-display text-[1.36rem] leading-[1.05]">{item}</p>
             </div>
           </Reveal>
         ))}
