@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 let registered = false;
-const MOTION_INTENSITY: "quieter" | "stronger" = "quieter";
+const MOTION_INTENSITY: "quieter" | "stronger" = "stronger";
 
 const orchestratorIntensity = {
   quieter: {
@@ -122,15 +122,15 @@ export function ScrollOrchestrator() {
             const nx = px * 2 - 1;
             const ny = py * 2 - 1;
 
-            moveX(nx * 10);
-            moveY(ny * 10);
-            scale(1.04);
-            rotX(-ny * 2.4);
-            rotY(nx * 2.4);
+            moveX(nx * 14);
+            moveY(ny * 14);
+            scale(1.055);
+            rotX(-ny * 3.2);
+            rotY(nx * 3.2);
 
             if (glowX && glowY) {
-              glowX(nx * 26);
-              glowY(ny * 26);
+              glowX(nx * 38);
+              glowY(ny * 38);
             }
           };
 

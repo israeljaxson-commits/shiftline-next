@@ -20,9 +20,9 @@ type ButtonProps = SharedProps &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className" | "children">;
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-charcoal text-paper hover:bg-emerald-deep hover:-translate-y-0.5 shadow-[0_14px_40px_-18px_rgba(18,20,15,0.55)]",
-  secondary: "border border-charcoal/80 text-charcoal hover:bg-charcoal hover:text-paper hover:-translate-y-0.5",
-  ghost: "border border-white/30 text-white hover:bg-white hover:text-charcoal hover:-translate-y-0.5",
+  primary: "bg-[linear-gradient(145deg,#151812,#0f130f)] text-paper hover:bg-[linear-gradient(145deg,#114b34,#0e3f2d)] hover:-translate-y-0.5 shadow-[0_18px_44px_-18px_rgba(18,20,15,0.62)]",
+  secondary: "border border-charcoal/80 bg-white/78 text-charcoal hover:bg-charcoal hover:text-paper hover:-translate-y-0.5",
+  ghost: "border border-white/30 bg-white/[0.02] text-white hover:bg-white hover:text-charcoal hover:-translate-y-0.5",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

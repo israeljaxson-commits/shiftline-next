@@ -43,10 +43,10 @@ export function ApplicationForm() {
   };
 
   return (
-    <section id="apply" data-section="true" data-journey="apply" className="grain relative overflow-hidden bg-charcoal py-36 lg:py-52">
+    <section id="apply" data-section="true" data-journey="apply" className="grain section-shell relative overflow-hidden bg-charcoal py-38 lg:py-54">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -left-16 top-14 h-72 w-72 rounded-full bg-emerald-bright/10 blur-3xl" />
-        <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/6 blur-3xl" />
+        <div className="absolute -left-16 top-14 h-72 w-72 rounded-full bg-emerald-bright/14 blur-3xl" />
+        <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/8 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -63,7 +63,7 @@ export function ApplicationForm() {
 
           <Reveal variant="card" className="apply-form lg:col-span-8 lg:ml-8">
             <form
-              className="grid gap-6 rounded-2xl border border-white/12 bg-white/[0.03] p-6 backdrop-blur-sm sm:grid-cols-2 lg:p-8"
+              className="grid gap-6 rounded-[28px] border border-white/16 bg-[linear-gradient(150deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-[0_38px_84px_-46px_rgba(0,0,0,0.8)] backdrop-blur-md sm:grid-cols-2 lg:p-10"
               aria-live="polite"
               onSubmit={(event) => {
                 event.preventDefault();
@@ -80,7 +80,7 @@ export function ApplicationForm() {
                   type="text"
                   value={form.name}
                   onChange={updateField("name")}
-                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-emerald-bright"
+                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/35 focus:border-emerald-bright"
                   placeholder="Jordan Alvarez"
                 />
               </div>
@@ -95,7 +95,7 @@ export function ApplicationForm() {
                   type="tel"
                   value={form.phone}
                   onChange={updateField("phone")}
-                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-emerald-bright"
+                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/35 focus:border-emerald-bright"
                   placeholder="+1 555 000 1234"
                 />
               </div>
@@ -110,7 +110,7 @@ export function ApplicationForm() {
                   type="email"
                   value={form.email}
                   onChange={updateField("email")}
-                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-emerald-bright"
+                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/35 focus:border-emerald-bright"
                   placeholder="you@email.com"
                 />
               </div>
@@ -125,7 +125,7 @@ export function ApplicationForm() {
                   type="text"
                   value={form.city}
                   onChange={updateField("city")}
-                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-emerald-bright"
+                  className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/35 focus:border-emerald-bright"
                   placeholder="Chicago, IL"
                 />
               </div>
@@ -157,7 +157,7 @@ export function ApplicationForm() {
                   rows={2}
                   value={form.experience}
                   onChange={updateField("experience")}
-                  className="w-full resize-none border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-emerald-bright"
+                  className="w-full resize-none border-b border-white/25 bg-transparent py-3 text-white outline-none transition-colors placeholder:text-white/35 focus:border-emerald-bright"
                   placeholder="A quick line or two about your background"
                 />
               </div>
@@ -166,7 +166,7 @@ export function ApplicationForm() {
                 <label className="mb-2 block font-mono text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white/58" htmlFor={uploadId}>
                   Upload CV
                 </label>
-                <div className="flex items-center justify-between rounded-xl border border-dashed border-white/25 px-5 py-6 text-sm text-white/50">
+                <div className="flex items-center justify-between rounded-2xl border border-dashed border-white/25 bg-white/[0.02] px-5 py-6 text-sm text-white/55">
                   <span>PDF or DOCX, up to 10MB</span>
                   <input id={uploadId} type="file" className="max-w-[200px] text-xs text-white/70 file:mr-3 file:rounded-full file:border-0 file:bg-white/10 file:px-3 file:py-1.5 file:text-white" />
                 </div>

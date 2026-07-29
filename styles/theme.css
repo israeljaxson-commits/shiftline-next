@@ -1,12 +1,18 @@
 :root {
   --color-charcoal: #12140f;
   --color-paper: #faf9f4;
+  --color-paper-warm: #f1ecdf;
+  --color-paper-ink: #f7f3e8;
   --color-emerald-deep: #0e4a34;
   --color-emerald: #1f9d63;
   --color-emerald-bright: #2ecc81;
+  --color-emerald-glow: rgba(46, 204, 129, 0.16);
   --color-beige: #e7dfcd;
   --color-steel: #8b8d85;
   --color-line: rgba(18, 20, 15, 0.12);
+  --shadow-soft: 0 20px 42px rgba(18, 20, 15, 0.08);
+  --shadow-premium: 0 34px 80px -30px rgba(18, 20, 15, 0.35);
+  --radius-editorial: 28px;
 }
 
 html {
@@ -14,7 +20,9 @@ html {
 }
 
 body {
-  background: var(--color-paper);
+  background:
+    radial-gradient(120% 110% at 50% -12%, rgba(31, 157, 99, 0.12), transparent 56%),
+    linear-gradient(160deg, var(--color-paper) 0%, var(--color-paper-ink) 48%, var(--color-paper-warm) 100%);
   color: var(--color-charcoal);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;

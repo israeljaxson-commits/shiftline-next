@@ -37,7 +37,7 @@ function AnimatedStat({ target, suffix }: { target: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section id="metrics" data-section="true" data-journey="stats" className="grain bg-emerald-deep py-36 lg:py-48">
+    <section id="metrics" data-section="true" data-journey="stats" className="grain section-shell bg-emerald-deep py-38 lg:py-50">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal variant="text">
           <SectionHeading eyebrow="06 — In Numbers" title="Proof that scale doesn't have to feel impersonal." dark className="mb-16 max-w-3xl" />
@@ -46,7 +46,7 @@ export function Stats() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} variant="card" delay={index * 0.05}>
-              <div className={index % 2 === 0 ? "stat-block bg-emerald-deep/72 px-6 py-8 backdrop-blur-sm lg:translate-y-0 lg:px-8 lg:py-10" : "stat-block bg-emerald-deep/62 px-6 py-8 backdrop-blur-sm lg:translate-y-8 lg:px-8 lg:py-10"}>
+              <div className={index % 2 === 0 ? "stat-block rounded-2xl border border-white/14 bg-gradient-to-b from-emerald-deep/78 to-emerald-deep/65 px-6 py-9 shadow-[0_24px_50px_-32px_rgba(0,0,0,0.65)] backdrop-blur-sm lg:translate-y-0 lg:px-8 lg:py-11" : "stat-block rounded-2xl border border-white/14 bg-gradient-to-b from-emerald-deep/70 to-emerald-deep/58 px-6 py-9 shadow-[0_24px_50px_-32px_rgba(0,0,0,0.65)] backdrop-blur-sm lg:translate-y-8 lg:px-8 lg:py-11"}>
                 <AnimatedStat target={stat.target} suffix={stat.suffix} />
                 <p className="mt-4 font-mono text-[10.5px] font-semibold uppercase tracking-[0.14em] text-white/72">{stat.label}</p>
               </div>

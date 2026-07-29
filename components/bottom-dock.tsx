@@ -115,17 +115,17 @@ export function BottomDock() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 0.8, 0.3, 1] }}
       style={{ y: liftY, x: "-50%" }}
-      className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,700px)]"
+      className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,720px)]"
     >
       <motion.div
         animate={{ scale: isAtTop ? 0.97 : 1, opacity: isAtTop ? 0.92 : 1 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="flex items-center gap-2 rounded-2xl border p-2 text-paper shadow-[0_14px_36px_rgba(0,0,0,0.34)]"
-        style={{ backgroundColor: "#000", borderColor: "#000" }}
+        className="flex items-center gap-2 rounded-[20px] border p-2 text-paper shadow-[0_24px_56px_-24px_rgba(0,0,0,0.62)]"
+        style={{ backgroundColor: "#0c0e0a", borderColor: "rgba(255,255,255,0.12)" }}
       >
         <Link
           href="#top"
-          className="flex h-12 min-w-[148px] items-center justify-center rounded-xl bg-paper px-4 text-center font-display text-lg font-semibold tracking-tight text-charcoal transition-transform hover:-translate-y-0.5"
+          className="flex h-12 min-w-[152px] items-center justify-center rounded-xl bg-paper px-4 text-center font-display text-lg font-semibold tracking-[-0.01em] text-charcoal transition-transform hover:-translate-y-0.5"
           aria-label="Back to top"
           onClick={(event) => {
             event.preventDefault();
@@ -142,8 +142,8 @@ export function BottomDock() {
               <motion.div
                 key={item.href}
                 className={cn(
-                  "relative overflow-hidden rounded-xl border bg-black px-2 py-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] transition-colors",
-                  isActive ? "border-white text-white" : "border-[#2b2b2b] text-white hover:border-[#595959] hover:text-white",
+                  "relative overflow-hidden rounded-xl border bg-[#111310] px-2 py-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] transition-colors",
+                  isActive ? "border-white text-white" : "border-[#343933] text-white/82 hover:border-[#6a7367] hover:text-white",
                 )}
                 whileHover={{ y: -2, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 500, damping: 32 }}
@@ -161,7 +161,7 @@ export function BottomDock() {
                   <motion.span
                     layoutId="dock-active-pill"
                     transition={{ type: "spring", stiffness: 500, damping: 38 }}
-                    className="absolute inset-0 rounded-[10px] bg-[#171717]"
+                    className="absolute inset-0 rounded-[10px] bg-[#1a1d19]"
                     aria-hidden="true"
                   />
                 ) : null}
@@ -213,7 +213,7 @@ export function BottomDock() {
           })}
         </div>
       </motion.div>
-      <div className="pointer-events-none mt-2 h-1.5 overflow-hidden rounded-full bg-black">
+      <div className="pointer-events-none mt-2 h-1.5 overflow-hidden rounded-full bg-[#0c0e0a]">
         <motion.div
           className="h-full origin-left rounded-full bg-white"
           style={{ scaleX: progress }}

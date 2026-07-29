@@ -18,15 +18,15 @@ export default function HomePage() {
       <ScrollOrchestrator />
       <Navbar />
       <Hero />
-      <div className="mx-auto my-4 h-px w-[88%] max-w-[1300px] bg-[linear-gradient(90deg,transparent,rgba(12,14,10,0.28),transparent)]" aria-hidden="true" />
+      <div className="editorial-divider mx-auto my-5 w-[88%] max-w-[1300px]" aria-hidden="true" />
       <About />
-      <div className="mx-auto my-2 h-px w-[84%] max-w-[1220px] bg-[linear-gradient(90deg,transparent,rgba(12,14,10,0.22),transparent)]" aria-hidden="true" />
+      <div className="editorial-divider mx-auto my-3 w-[84%] max-w-[1220px]" aria-hidden="true" />
       <Industries />
       <Services />
-      <div className="mx-auto my-2 h-px w-[80%] max-w-[1160px] bg-[linear-gradient(90deg,transparent,rgba(12,14,10,0.22),transparent)]" aria-hidden="true" />
+      <div className="editorial-divider mx-auto my-3 w-[80%] max-w-[1160px]" aria-hidden="true" />
       <Timeline />
       <WhyShiftline />
-      <div className="mx-auto my-2 h-px w-[78%] max-w-[1120px] bg-[linear-gradient(90deg,transparent,rgba(12,14,10,0.2),transparent)]" aria-hidden="true" />
+      <div className="editorial-divider mx-auto my-3 w-[78%] max-w-[1120px]" aria-hidden="true" />
       <Stats />
       <Testimonials />
       <ApplicationForm />
