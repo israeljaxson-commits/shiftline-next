@@ -4,10 +4,10 @@ import { Reveal } from "@/components/reveal";
 
 export function Industries() {
   return (
-    <section id="industries" data-section="true" className="bg-paper px-6 py-28 lg:px-10 lg:py-36">
+    <section id="industries" data-section="true" data-journey="industries" className="bg-paper px-6 py-28 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-[1400px]">
         <Reveal variant="text">
-          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div className="industries-head mb-14 flex flex-wrap items-end justify-between gap-6">
             <h2 className="max-w-xl font-display text-[2.45rem] leading-[0.94] tracking-tight text-charcoal lg:text-[3.75rem]">Industries we keep moving.</h2>
             <p className="max-w-md font-mono text-[10.5px] font-semibold uppercase tracking-[0.16em] text-charcoal/55">Courier, warehouse, and construction staffing built for real shift pressure.</p>
           </div>
@@ -21,7 +21,7 @@ export function Industries() {
               delay={index * 0.1}
               className={index === 0 ? "lg:col-span-7 lg:row-span-2" : "lg:col-span-5"}
             >
-              <article className="group h-full">
+              <article className={index === 0 ? "industry-feature group h-full" : "industry-support group h-full"}>
                 <div
                   data-parallax="soft"
                   className={index === 0

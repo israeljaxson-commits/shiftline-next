@@ -12,7 +12,7 @@ const icons = [
 
 export function WhyShiftline() {
   return (
-    <section id="why" data-section="true" className="bg-beige px-6 py-36 lg:px-10 lg:py-48 xl:py-56">
+    <section id="why" data-section="true" data-journey="why" className="bg-beige px-6 py-36 lg:px-10 lg:py-48 xl:py-56">
       <Reveal variant="text">
         <SectionHeading eyebrow="05 — Why Best Noornova" title="Built for companies that need certainty before sunrise." className="mb-16 max-w-3xl" />
       </Reveal>
@@ -20,7 +20,7 @@ export function WhyShiftline() {
       <div className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
         {whyShiftline.map((item, index) => (
           <Reveal key={item} variant="card" delay={index * 0.08}>
-            <div className={index % 2 === 0 ? "flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5 lg:-translate-y-4" : "flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5"}>
+            <div className={index % 2 === 0 ? "why-card flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5 lg:-translate-y-4" : "why-card flex min-h-[236px] flex-col justify-between bg-paper p-8 transition-transform duration-500 hover:-translate-y-2.5"}>
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-emerald-deep/22 bg-emerald-deep/[0.05]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald-deep)" strokeWidth="1.5" aria-hidden="true">
                 {icons[index]}

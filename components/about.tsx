@@ -5,20 +5,20 @@ import { SectionHeading } from "@/components/section-heading";
 
 export function About() {
   return (
-    <section id="about" data-section="true" className="mx-auto max-w-[1400px] px-6 py-32 lg:px-10 lg:py-44 xl:py-52">
+    <section id="about" data-section="true" data-journey="about" className="mx-auto max-w-[1400px] px-6 py-32 lg:px-10 lg:py-44 xl:py-52">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-18">
-        <Reveal variant="text" className="lg:col-span-5">
+        <Reveal variant="text" className="about-head lg:col-span-5">
           <SectionHeading eyebrow="01 — About Best Noornova" title="Every shift is a promise someone shows up for." />
         </Reveal>
 
         <div className="lg:col-span-7 lg:pt-16">
-          <Reveal variant="text">
+          <Reveal variant="text" className="about-copy">
             <p className="max-w-2xl text-balance text-[1.12rem] leading-relaxed text-charcoal/78 lg:text-[1.3rem]">
               Best Noornova was built for the kinds of jobs that keep cities running: fast moving delivery work, warehouse coverage, and active site crews. We match real people to real shifts with speed, accountability, and zero guesswork.
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-4 border-t border-line pt-10 sm:grid-cols-3">
+          <div className="about-pillars mt-16 grid gap-4 border-t border-line pt-10 sm:grid-cols-3">
             {aboutHighlights.map((item, index) => (
               <Reveal key={item.title} variant="card" delay={index * 0.08}>
                 <div className="rounded-xl border border-line/80 bg-paper px-4 py-5">
@@ -31,7 +31,7 @@ export function About() {
         </div>
       </div>
 
-      <Reveal variant="image" className="mt-24">
+      <Reveal variant="image" className="about-image mt-24">
         <div data-parallax="soft" className="relative h-[60vh] overflow-hidden rounded-2xl lg:h-[70vh]">
           <Image
             src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1600&q=80"

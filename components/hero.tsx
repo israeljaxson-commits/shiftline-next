@@ -21,17 +21,17 @@ const showcases = [
 
 export function Hero() {
   return (
-    <section id="top" data-section="true" className="bg-paper px-6 pb-16 pt-30 lg:px-10 lg:pt-36">
+    <section id="top" data-section="true" data-journey="hero" className="bg-paper px-6 pb-16 pt-30 lg:px-10 lg:pt-36">
       <div className="mx-auto max-w-[1400px]">
         <Reveal variant="text">
-          <p className="mb-4 font-mono text-[10.5px] font-semibold uppercase tracking-[0.2em] text-charcoal/55">Best Noornova • Workforce, on the move</p>
+          <p className="hero-kicker mb-4 font-mono text-[10.5px] font-semibold uppercase tracking-[0.2em] text-charcoal/55">Best Noornova • Workforce, on the move</p>
         </Reveal>
 
         <Reveal variant="section" delay={0.04}>
-          <h1 className="max-w-4xl font-display text-[13vw] leading-[0.91] tracking-[-0.028em] text-charcoal sm:text-[11vw] lg:text-[6.4vw]">Recent shifts on the move.</h1>
+          <h1 className="hero-title max-w-4xl font-display text-[13vw] leading-[0.91] tracking-[-0.028em] text-charcoal sm:text-[11vw] lg:text-[6.4vw]">Recent shifts on the move.</h1>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="hero-cards mt-12 grid gap-5 lg:grid-cols-2">
           {showcases.map((item, index) => (
             <Reveal
               key={item.title}
@@ -63,7 +63,7 @@ export function Hero() {
           ))}
         </div>
 
-        <Reveal variant="text" delay={0.18} className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.96rem] text-charcoal/72">
+        <Reveal variant="text" delay={0.18} className="hero-meta mt-9 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.96rem] text-charcoal/72">
           <p>Recruitment and employee leasing for delivery, warehouse, and construction teams.</p>
           <Link href="#apply" className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal transition-opacity hover:opacity-70">
             View Open Roles

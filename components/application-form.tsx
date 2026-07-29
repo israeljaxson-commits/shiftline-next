@@ -43,7 +43,7 @@ export function ApplicationForm() {
   };
 
   return (
-    <section id="apply" data-section="true" className="grain relative overflow-hidden bg-charcoal py-36 lg:py-52">
+    <section id="apply" data-section="true" data-journey="apply" className="grain relative overflow-hidden bg-charcoal py-36 lg:py-52">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -left-16 top-14 h-72 w-72 rounded-full bg-emerald-bright/10 blur-3xl" />
         <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/6 blur-3xl" />
@@ -51,7 +51,7 @@ export function ApplicationForm() {
 
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid gap-18 lg:grid-cols-12">
-          <Reveal variant="text" className="lg:col-span-4 lg:pt-10">
+          <Reveal variant="text" className="apply-copy lg:col-span-4 lg:pt-10">
             <SectionHeading
               dark
               eyebrow="08 — Get Started"
@@ -61,7 +61,7 @@ export function ApplicationForm() {
             />
           </Reveal>
 
-          <Reveal variant="card" className="lg:col-span-8 lg:ml-8">
+          <Reveal variant="card" className="apply-form lg:col-span-8 lg:ml-8">
             <form
               className="grid gap-6 rounded-2xl border border-white/12 bg-white/[0.03] p-6 backdrop-blur-sm sm:grid-cols-2 lg:p-8"
               aria-live="polite"

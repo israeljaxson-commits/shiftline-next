@@ -14,6 +14,70 @@ type RevealProps = {
 };
 
 let gsapRegistered = false;
+const MOTION_INTENSITY: "quieter" | "stronger" = "quieter";
+
+const revealIntensity = {
+  quieter: {
+    mobile: {
+      textY: 14,
+      cardY: 18,
+      imageY: 20,
+      sectionY: 20,
+      timelineX: 12,
+      durationBase: 0.72,
+      imageDuration: 0.82,
+      sectionDuration: 0.82,
+      staggerDuration: 0.62,
+      staggerCap: 0.07,
+      start: "top 92%",
+      ease: "power2.out",
+    },
+    desktop: {
+      textY: 24,
+      cardY: 30,
+      imageY: 34,
+      sectionY: 36,
+      timelineX: 18,
+      durationBase: 0.88,
+      imageDuration: 0.98,
+      sectionDuration: 0.96,
+      staggerDuration: 0.78,
+      staggerCap: 0.09,
+      start: "top 88%",
+      ease: "power2.out",
+    },
+  },
+  stronger: {
+    mobile: {
+      textY: 22,
+      cardY: 26,
+      imageY: 28,
+      sectionY: 30,
+      timelineX: 16,
+      durationBase: 0.9,
+      imageDuration: 1,
+      sectionDuration: 0.98,
+      staggerDuration: 0.82,
+      staggerCap: 0.1,
+      start: "top 90%",
+      ease: "power3.out",
+    },
+    desktop: {
+      textY: 40,
+      cardY: 50,
+      imageY: 54,
+      sectionY: 58,
+      timelineX: 30,
+      durationBase: 1.12,
+      imageDuration: 1.24,
+      sectionDuration: 1.18,
+      staggerDuration: 0.98,
+      staggerCap: 0.14,
+      start: "top 84%",
+      ease: "power3.out",
+    },
+  },
+} as const;
 
 export function Reveal({ children, className, delay = 0, variant = "text", staggerChildren = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -32,39 +96,22 @@ export function Reveal({ children, className, delay = 0, variant = "text", stagg
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
     const motion = isMobile
-      ? {
-          textY: 18,
-          cardY: 22,
-          imageY: 24,
-          sectionY: 24,
-          timelineX: 14,
-          durationBase: 0.8,
-          imageDuration: 0.9,
-          sectionDuration: 0.9,
-          staggerDuration: 0.7,
-          staggerCap: 0.08,
-          start: "top 91%",
-          ease: "power2.out",
-        }
-      : {
-          textY: 30,
-          cardY: 38,
-          imageY: 40,
-          sectionY: 42,
-          timelineX: 24,
-          durationBase: 0.98,
-          imageDuration: 1.1,
-          sectionDuration: 1.06,
-          staggerDuration: 0.86,
-          staggerCap: 0.1,
-          start: "top 86%",
-          ease: "power3.out",
-        };
+      ? revealIntensity[MOTION_INTENSITY].mobile
+      : revealIntensity[MOTION_INTENSITY].desktop;
 
     const el = ref.current;
+    const journeyRoot = el.closest("[data-journey]");
+    if (journeyRoot && !el.hasAttribute("data-reveal-force")) {
+      return;
+    }
+
     const config = {
       text: {
-        from: { autoAlpha: 0, y: motion.textY },
+        from: {
+          autoAlpha: 0,
+          y: motion.textY,
+          clipPath: isMobile ? "inset(0 0 100% 0 round 6px)" : "inset(0 0 100% 0 round 8px)",
+        },
         to: { autoAlpha: 1, y: 0, duration: motion.durationBase, ease: motion.ease },
       },
       image: {
@@ -78,15 +125,29 @@ export function Reveal({ children, className, delay = 0, variant = "text", stagg
         },
       },
       card: {
-        from: { autoAlpha: 0, y: motion.cardY, scale: isMobile ? 0.992 : 0.986 },
+        from: {
+          autoAlpha: 0,
+          y: motion.cardY,
+          scale: isMobile ? 0.992 : 0.986,
+          clipPath: isMobile ? "inset(0 0 8% 0 round 14px)" : "inset(0 0 12% 0 round 14px)",
+        },
         to: { autoAlpha: 1, y: 0, scale: 1, duration: motion.durationBase, ease: motion.ease },
       },
       section: {
-        from: { autoAlpha: 0, y: motion.sectionY },
-        to: { autoAlpha: 1, y: 0, duration: motion.sectionDuration, ease: motion.ease },
+        from: {
+          autoAlpha: 0,
+          x: isMobile ? 10 : 16,
+          y: motion.sectionY,
+          clipPath: isMobile ? "inset(0 0 14% 0 round 10px)" : "inset(0 0 18% 0 round 10px)",
+        },
+        to: { autoAlpha: 1, x: 0, y: 0, duration: motion.sectionDuration, ease: motion.ease },
       },
       timeline: {
-        from: { autoAlpha: 0, x: motion.timelineX },
+        from: {
+          autoAlpha: 0,
+          x: motion.timelineX,
+          clipPath: isMobile ? "inset(0 0 12% 0 round 10px)" : "inset(0 0 18% 0 round 10px)",
+        },
         to: { autoAlpha: 1, x: 0, duration: motion.durationBase, ease: motion.ease },
       },
     }[variant];
@@ -95,10 +156,15 @@ export function Reveal({ children, className, delay = 0, variant = "text", stagg
       if (staggerChildren > 0) {
         gsap.fromTo(
           el.children,
-          { autoAlpha: 0, y: isMobile ? 16 : 28 },
+          {
+            autoAlpha: 0,
+            y: isMobile ? 16 : 28,
+            clipPath: isMobile ? "inset(0 0 10% 0 round 10px)" : "inset(0 0 14% 0 round 10px)",
+          },
           {
             autoAlpha: 1,
             y: 0,
+            clipPath: "inset(0 0 0% 0 round 10px)",
             duration: motion.staggerDuration,
             ease: motion.ease,
             stagger: Math.min(staggerChildren, motion.staggerCap),
@@ -115,6 +181,7 @@ export function Reveal({ children, className, delay = 0, variant = "text", stagg
 
       gsap.fromTo(el, config.from, {
         ...config.to,
+        clipPath: "inset(0 0 0% 0 round 14px)",
         delay,
         scrollTrigger: {
           trigger: el,

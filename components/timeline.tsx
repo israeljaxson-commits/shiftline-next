@@ -23,7 +23,7 @@ function TimelineColumn({ title, items }: { title: string; items: readonly { tit
 
 export function Timeline() {
   return (
-    <section id="how" data-section="true" className="relative overflow-hidden bg-beige py-36 lg:py-48 xl:py-56">
+    <section id="how" data-section="true" data-journey="timeline" className="relative overflow-hidden bg-beige py-36 lg:py-48 xl:py-56">
       <div className="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-charcoal/20 to-transparent" />
       </div>
