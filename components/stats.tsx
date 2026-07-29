@@ -40,7 +40,7 @@ export function Stats() {
     <section id="metrics" data-section="true" data-journey="stats" className="grain section-shell bg-emerald-deep py-38 lg:py-50">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <Reveal variant="text">
-          <SectionHeading eyebrow="06 — In Numbers" title="Proof that scale doesn't have to feel impersonal." dark className="mb-16 max-w-3xl" />
+          <SectionHeading eyebrow="06 — In Numbers" title="Proof that scale doesn't have to feel impersonal." dark eyebrowClassName="text-white" className="mb-16 max-w-3xl" />
         </Reveal>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
