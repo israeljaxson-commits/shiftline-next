@@ -155,35 +155,6 @@ export function ScrollOrchestrator() {
         });
       }
 
-      const hero = document.querySelector<HTMLElement>("#top");
-      if (hero) {
-        const heroTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: hero,
-            start: profile.sectionStart,
-            once: true,
-          },
-        });
-        heroTl
-          .fromTo(
-            hero.querySelectorAll(".hero-kicker, .hero-title"),
-            { autoAlpha: 0, y: profile.sectionLift, clipPath: clipHard },
-            { autoAlpha: 1, y: 0, clipPath: "inset(0 0 0% 0 round 10px)", duration: profile.sectionDuration, stagger: 0.08, ease: "power3.out" },
-          )
-          .fromTo(
-            hero.querySelectorAll(".hero-cards > *"),
-            { autoAlpha: 0, y: profile.sectionLift + 8, scale: 0.986, clipPath: clipSoft },
-            { autoAlpha: 1, y: 0, scale: 1, clipPath: "inset(0 0 0% 0 round 16px)", duration: profile.sectionDuration + 0.06, stagger: 0.1, ease: "power3.out" },
-            "-=0.3",
-          )
-          .fromTo(
-            hero.querySelectorAll(".hero-meta"),
-            { autoAlpha: 0, x: isMobile ? 10 : 16, clipPath: clipSoft },
-            { autoAlpha: 1, x: 0, clipPath: "inset(0 0 0% 0 round 10px)", duration: profile.sectionDuration, ease: "power2.out" },
-            "-=0.34",
-          );
-      }
-
       const about = document.querySelector<HTMLElement>("#about");
       if (about) {
         const aboutTl = gsap.timeline({

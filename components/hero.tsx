@@ -1,7 +1,10 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import SplitType from "split-type";
 import { Reveal } from "@/components/reveal";
 
 const showcases = [
@@ -20,9 +23,96 @@ const showcases = [
 ] as const;
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const heading = section.querySelector<HTMLElement>(".hero-title");
+    if (!heading) return;
+
+    const split = new SplitType(heading, { types: "lines,words,chars" });
+
+    gsap.set(section.querySelectorAll(".hero-kicker, .hero-meta"), { autoAlpha: 0, y: 16 });
+    gsap.set(section.querySelectorAll(".hero-cards > *"), { autoAlpha: 0, y: 22, scale: 0.988 });
+    gsap.set(section.querySelectorAll(".hero-depth-back, .hero-depth-front"), { autoAlpha: 0, scale: 1.08 });
+    gsap.set(section.querySelectorAll(".hero-ambient-video"), { autoAlpha: 0, scale: 1.12 });
+    gsap.set(split.chars, { yPercent: 110, rotateX: -35, autoAlpha: 0, transformOrigin: "0% 100%" });
+
+    const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
+    intro
+      .to(section.querySelectorAll(".hero-depth-back"), { autoAlpha: 0.42, scale: 1, duration: 1.5 })
+      .to(section.querySelectorAll(".hero-ambient-video"), { autoAlpha: 0.24, scale: 1, duration: 1.7 }, "<")
+      .to(section.querySelectorAll(".hero-depth-front"), { autoAlpha: 0.36, scale: 1, duration: 1.25 }, "<0.15")
+      .to(split.chars, { autoAlpha: 1, yPercent: 0, rotateX: 0, duration: 0.95, stagger: 0.014 }, "<0.2")
+      .to(section.querySelectorAll(".hero-kicker"), { autoAlpha: 1, y: 0, duration: 0.75 }, "<0.1")
+      .to(section.querySelectorAll(".hero-cards > *"), { autoAlpha: 1, y: 0, scale: 1, duration: 1.05, stagger: 0.12 }, "-=0.45")
+      .to(section.querySelectorAll(".hero-meta"), { autoAlpha: 1, y: 0, duration: 0.72 }, "-=0.64");
+
+    const backX = gsap.quickTo(section.querySelector(".hero-depth-back"), "x", { duration: 0.9, ease: "power3.out" });
+    const backY = gsap.quickTo(section.querySelector(".hero-depth-back"), "y", { duration: 0.9, ease: "power3.out" });
+    const frontX = gsap.quickTo(section.querySelector(".hero-depth-front"), "x", { duration: 0.7, ease: "power3.out" });
+    const frontY = gsap.quickTo(section.querySelector(".hero-depth-front"), "y", { duration: 0.7, ease: "power3.out" });
+    const videoX = gsap.quickTo(section.querySelector(".hero-ambient-video"), "x", { duration: 1, ease: "power2.out" });
+    const videoY = gsap.quickTo(section.querySelector(".hero-ambient-video"), "y", { duration: 1, ease: "power2.out" });
+
+    const onMove = (event: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const nx = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const ny = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+
+      backX(nx * -14);
+      backY(ny * -10);
+      frontX(nx * 18);
+      frontY(ny * 12);
+      videoX(nx * 10);
+      videoY(ny * 8);
+    };
+
+    const onLeave = () => {
+      backX(0);
+      backY(0);
+      frontX(0);
+      frontY(0);
+      videoX(0);
+      videoY(0);
+    };
+
+    section.addEventListener("mousemove", onMove);
+    section.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      section.removeEventListener("mousemove", onMove);
+      section.removeEventListener("mouseleave", onLeave);
+      split.revert();
+      intro.kill();
+    };
+  }, []);
+
   return (
-    <section id="top" data-section="true" data-journey="hero" className="section-shell bg-paper px-6 pb-20 pt-30 lg:px-10 lg:pb-28 lg:pt-36">
-      <div className="mx-auto max-w-[1400px]">
+    <section ref={sectionRef} id="top" data-section="true" data-journey="hero" className="section-shell relative overflow-hidden bg-paper px-6 pb-20 pt-30 lg:px-10 lg:pb-28 lg:pt-36">
+      <div className="hero-depth-back pointer-events-none absolute -left-14 -top-24 h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle,rgba(32,145,95,0.28),rgba(32,145,95,0)_68%)] blur-[8px]" aria-hidden="true" />
+      <div className="hero-depth-front pointer-events-none absolute -bottom-28 -right-16 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(12,14,10,0.16),rgba(12,14,10,0)_70%)] blur-[10px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <video
+          className="hero-ambient-video h-full w-full object-cover motion-reduce:hidden"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="https://images.pexels.com/photos/7706451/pexels-photo-7706451.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1800&q=80"
+        >
+          <source src="https://videos.pexels.com/video-files/4246213/4246213-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(250,249,244,0.9),rgba(250,249,244,0.72)_42%,rgba(250,249,244,0.88))]" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px]">
         <Reveal variant="text">
           <p className="hero-kicker mb-5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.2em] text-charcoal/55">Best Noornova • Workforce, on the move</p>
         </Reveal>
