@@ -1,5 +1,4 @@
 import { About } from "@/components/about";
-import { ApplicationForm } from "@/components/application-form";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { Industries } from "@/components/industries";
@@ -14,7 +13,7 @@ import { ScrollOrchestrator } from "@/components/scroll-orchestrator";
 
 export default function HomePage() {
   return (
-    <main className="story-flow min-h-screen bg-paper pb-28">
+    <main className="story-flow min-h-screen bg-paper pb-36 md:pb-28">
       <ScrollOrchestrator />
       <Navbar />
       <Hero />
@@ -25,7 +24,6 @@ export default function HomePage() {
       <WhyShiftline />
       <Stats />
       <Testimonials />
-      <ApplicationForm />
       <Footer />
       <BottomDock />
     </main>

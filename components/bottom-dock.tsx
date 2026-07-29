@@ -45,16 +45,6 @@ const items = [
       </>
     ),
   },
-  {
-    href: "#apply",
-    label: "Apply",
-    icon: (
-      <>
-        <path d="M12 4v16" />
-        <path d="M4 12h16" />
-      </>
-    ),
-  },
 ] as const;
 
 export function BottomDock() {
@@ -115,26 +105,27 @@ export function BottomDock() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 0.8, 0.3, 1] }}
       style={{ y: liftY, x: "-50%" }}
-      className="fixed bottom-4 left-1/2 z-50 w-[min(94vw,720px)]"
+      className="fixed bottom-3 left-1/2 z-50 w-[min(97vw,720px)] md:bottom-4 md:w-[min(94vw,720px)]"
     >
       <motion.div
         animate={{ scale: isAtTop ? 0.97 : 1, opacity: isAtTop ? 0.92 : 1 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="flex items-center gap-2 rounded-[20px] border p-2 text-paper shadow-[0_24px_56px_-24px_rgba(0,0,0,0.62)]"
+        className="flex items-center gap-1.5 rounded-[18px] border p-1.5 text-paper shadow-[0_24px_56px_-24px_rgba(0,0,0,0.62)] md:gap-2 md:rounded-[20px] md:p-2"
         style={{ backgroundColor: "#0c0e0a", borderColor: "rgba(255,255,255,0.12)" }}
       >
         <Link
           href="#top"
-          className="flex h-12 min-w-[152px] items-center justify-center rounded-xl bg-paper px-4 text-center font-display text-lg font-semibold tracking-[-0.01em] text-charcoal transition-transform hover:-translate-y-0.5"
+          className="flex h-10 min-w-[74px] items-center justify-center rounded-lg bg-paper px-2.5 text-center font-display text-sm font-semibold tracking-[-0.01em] text-charcoal transition-transform hover:-translate-y-0.5 md:h-12 md:min-w-[152px] md:rounded-xl md:px-4 md:text-lg"
           aria-label="Back to top"
           onClick={(event) => {
             event.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Best Noornova
+          <span className="sm:hidden">BN</span>
+          <span className="hidden sm:inline">Best Noornova</span>
         </Link>
-        <div className="grid flex-1 grid-cols-5 gap-2">
+        <div className="grid flex-1 grid-cols-4 gap-1.5 md:gap-2">
           {items.map((item) => {
             const isActive = activeHref === item.href;
 
@@ -142,7 +133,7 @@ export function BottomDock() {
               <motion.div
                 key={item.href}
                 className={cn(
-                  "relative overflow-hidden rounded-xl border bg-[#111310] px-2 py-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] transition-colors",
+                  "relative overflow-hidden rounded-lg border bg-[#111310] px-1.5 py-2.5 text-center font-mono text-[10px] uppercase tracking-[0.06em] transition-colors md:rounded-xl md:px-2 md:py-3 md:text-[11px] md:tracking-[0.12em]",
                   isActive ? "border-white text-white" : "border-[#343933] text-white/82 hover:border-[#6a7367] hover:text-white",
                 )}
                 whileHover={{ y: -2, scale: 1.02 }}
@@ -165,7 +156,7 @@ export function BottomDock() {
                     aria-hidden="true"
                   />
                 ) : null}
-                <span className="relative z-10 flex items-center justify-center gap-1.5">
+                <span className="relative z-10 flex items-center justify-center gap-1 md:gap-1.5">
                   <span className="relative h-3.5 w-3.5">
                     <AnimatePresence mode="wait">
                       {isActive ? (
@@ -206,7 +197,7 @@ export function BottomDock() {
                       )}
                     </AnimatePresence>
                   </span>
-                  {item.label}
+                  <span className="hidden sm:inline">{item.label}</span>
                 </span>
               </motion.div>
             );

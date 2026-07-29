@@ -94,7 +94,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="top" data-section="true" data-journey="hero" className="section-shell relative overflow-hidden bg-paper px-6 pb-20 pt-30 lg:px-10 lg:pb-28 lg:pt-36">
+    <section ref={sectionRef} id="top" data-section="true" data-journey="hero" className="section-shell relative overflow-hidden bg-paper px-6 pb-14 pt-24 sm:pb-18 sm:pt-28 lg:px-10 lg:pb-28 lg:pt-36">
       <div className="hero-depth-back pointer-events-none absolute -left-14 -top-24 h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle,rgba(32,145,95,0.28),rgba(32,145,95,0)_68%)] blur-[8px]" aria-hidden="true" />
       <div className="hero-depth-front pointer-events-none absolute -bottom-28 -right-16 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(12,14,10,0.16),rgba(12,14,10,0)_70%)] blur-[10px]" aria-hidden="true" />
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -123,7 +123,7 @@ export function Hero() {
           </h1>
         </Reveal>
 
-        <div className="hero-cards mt-13 grid gap-6 lg:grid-cols-2">
+        <div className="hero-cards mt-11 grid gap-4 sm:mt-12 sm:gap-5 lg:mt-13 lg:gap-6 lg:grid-cols-2">
           {showcases.map((item, index) => (
             <Reveal
               key={item.title}
@@ -143,15 +143,15 @@ export function Hero() {
                 <span className="cursor-reactive-glow" aria-hidden="true" />
                 <div className="docu-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/72 via-charcoal/24 to-charcoal/6" />
-                <div className="absolute left-5 top-5 rounded-full border border-white/28 bg-white/18 px-3.5 py-1 font-mono text-[9.5px] font-semibold uppercase tracking-[0.17em] text-white backdrop-blur-sm">
+                <div className="absolute left-4 top-4 rounded-full border border-white/28 bg-white/18 px-3 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm sm:left-5 sm:top-5 sm:px-3.5 sm:text-[9.5px] sm:tracking-[0.17em]">
                   Live Route
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-5 rounded-2xl border border-white/25 bg-white/88 p-4 shadow-[0_22px_46px_rgba(0,0,0,0.24)] backdrop-blur-md lg:p-5">
+                <div className="absolute bottom-4 left-4 right-4 flex flex-col items-start gap-3 rounded-2xl border border-white/25 bg-white/88 p-3.5 shadow-[0_22px_46px_rgba(0,0,0,0.24)] backdrop-blur-md sm:bottom-5 sm:left-5 sm:right-5 sm:gap-5 sm:p-4 lg:flex-row lg:items-end lg:justify-between lg:p-5">
                   <div>
-                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-charcoal/66">Workforce</p>
-                    <p className="mt-2 max-w-[18ch] font-display text-[2rem] font-semibold leading-[1] tracking-[-0.01em] text-charcoal lg:text-[2.2rem]">{item.title}</p>
+                    <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.14em] text-charcoal/66 sm:text-[10px] sm:tracking-[0.18em]">Workforce</p>
+                    <p className="mt-1.5 max-w-[18ch] font-display text-[1.58rem] font-semibold leading-[1.02] tracking-[-0.01em] text-charcoal sm:mt-2 sm:text-[1.82rem] lg:text-[2.2rem]">{item.title}</p>
                   </div>
-                  <span className="rounded-full border border-charcoal/20 bg-white px-3.5 py-1.5 font-mono text-[9.8px] font-semibold uppercase tracking-[0.14em] text-charcoal shadow-[0_8px_18px_rgba(0,0,0,0.12)]">
+                  <span className="rounded-full border border-charcoal/20 bg-white px-3 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-charcoal shadow-[0_8px_18px_rgba(0,0,0,0.12)] sm:px-3.5 sm:py-1.5 sm:text-[9.8px] sm:tracking-[0.14em]">
                     {item.partner}
                   </span>
                 </div>
@@ -160,9 +160,9 @@ export function Hero() {
           ))}
         </div>
 
-        <Reveal variant="text" delay={0.18} className="hero-meta mt-9 flex flex-wrap items-center gap-x-10 gap-y-3 text-[0.97rem] text-charcoal/74">
+        <Reveal variant="text" delay={0.18} className="hero-meta mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.94rem] text-charcoal/74 sm:mt-9 sm:gap-x-10 sm:text-[0.97rem]">
           <p className="max-w-[42ch]">Recruitment and employee leasing for delivery, warehouse, and construction teams.</p>
-          <Link href="#apply" className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal transition-opacity hover:opacity-70">
+          <Link href="#contact" className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal transition-opacity hover:opacity-70">
             View Open Roles
             <span aria-hidden="true">→</span>
           </Link>

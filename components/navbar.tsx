@@ -52,10 +52,10 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button href="#apply" variant="secondary" size="sm" className="rounded-xl border-line bg-white hover:bg-charcoal hover:text-paper">
+          <Button href="#contact" variant="secondary" size="sm" className="rounded-xl border-line bg-white hover:bg-charcoal hover:text-paper">
             Find work
           </Button>
-          <Button href="#apply" size="sm" className="rounded-xl bg-charcoal text-paper hover:bg-black">
+          <Button href="#contact" size="sm" className="rounded-xl bg-charcoal text-paper hover:bg-black">
             Hire crew
           </Button>
         </div>
@@ -91,10 +91,10 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-6 flex gap-3">
-              <Button href="#apply" variant="secondary" size="sm" className="flex-1 rounded-xl">
+              <Button href="#contact" variant="secondary" size="sm" className="flex-1 rounded-xl">
                 Find Work
               </Button>
-              <Button href="#apply" size="sm" className="flex-1 rounded-xl">
+              <Button href="#contact" size="sm" className="flex-1 rounded-xl">
                 Hire
               </Button>
             </div>

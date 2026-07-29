@@ -362,35 +362,6 @@ export function ScrollOrchestrator() {
         );
       }
 
-      const apply = document.querySelector<HTMLElement>("#apply");
-      if (apply) {
-        gsap.fromTo(
-          apply.querySelectorAll(".apply-copy"),
-          { autoAlpha: 0, x: -16, clipPath: clipSoft },
-          {
-            autoAlpha: 1,
-            x: 0,
-            clipPath: "inset(0 0 0% 0 round 12px)",
-            duration: profile.sectionDuration,
-            ease: "power2.out",
-            scrollTrigger: { trigger: apply, start: profile.sectionStart, once: true },
-          },
-        );
-        gsap.fromTo(
-          apply.querySelectorAll(".apply-form"),
-          { autoAlpha: 0, x: 20, scale: 0.989, clipPath: isMobile ? "inset(0 0 14% 0 round 14px)" : "inset(0 0 18% 0 round 14px)" },
-          {
-            autoAlpha: 1,
-            x: 0,
-            scale: 1,
-            clipPath: "inset(0 0 0% 0 round 14px)",
-            duration: profile.sectionDuration + 0.12,
-            ease: "power3.out",
-            scrollTrigger: { trigger: apply, start: profile.sectionStart, once: true },
-          },
-        );
-      }
-
       const outro = document.querySelector<HTMLElement>("#contact");
       if (outro) {
         gsap.fromTo(

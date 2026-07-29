@@ -86,17 +86,13 @@ body::before {
     --story-rgb: 14 74 52;
   }
 
-  .story-flow > section[data-journey="apply"] {
-    --story-rgb: 18 20 15;
-  }
-
   @media (max-width: 768px) {
     .story-flow > section[data-section="true"]:not(:first-of-type) {
-      margin-top: -24px;
+      margin-top: -8px;
     }
 
     .story-flow > section[data-section="true"]::before {
-      height: 56px;
+      height: 38px;
     }
   }
 

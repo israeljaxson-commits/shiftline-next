@@ -162,8 +162,8 @@ export const footerLinks = [
   {
     title: "Action",
     links: [
-      { href: "#apply", label: "Find Work" },
-      { href: "#apply", label: "Hire Workers" },
+      { href: "#contact", label: "Find Work" },
+      { href: "#contact", label: "Hire Workers" },
       { href: "#contact", label: "Contact" },
     ],
   },
@@ -184,6 +184,5 @@ export const routeSections = [
   { id: "services", label: "Services" },
   { id: "how", label: "Process" },
   { id: "metrics", label: "Metrics" },
-  { id: "apply", label: "Apply" },
   { id: "contact", label: "Contact" },
 ] as const;
